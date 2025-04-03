@@ -97,6 +97,12 @@ static void	init_and_validate(t_stab *var, char ***tmp, int *c, char **v)
 	if (check_repeat(var->tab_a, var->top_a) == 0)
 		quit(var, 1, 0);
 }
+void	nor(t_stab *var)
+{
+	indexing(var);
+	push_sorted_to_b(var);
+	push_sorted_to_a(var);
+}
 
 int	main(int argc, char **argv)
 {

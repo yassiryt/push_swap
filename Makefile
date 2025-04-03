@@ -1,7 +1,7 @@
 NAME = push_swap
 
 SRCS = main.c check_arg.c sort_small.c sort_fct.c utils.c\
-	sort_fct2.c index_pushb.c util2.c utils3.c
+	sort_fct2.c index_pushb.c utils2.c utils3.c
 
 OBJS = $(SRCS:.c=.o)
 
