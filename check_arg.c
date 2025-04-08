@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yatanagh <yatanagh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 02:47:35 by yatanagh          #+#    #+#             */
+/*   Updated: 2025/04/08 02:57:20 by yatanagh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -66,4 +77,26 @@ int	check_space(char **v)
 		i++;
 	}
 	return (1);
+}
+
+void	param_to_var(t_stab *var, char **v, int c)
+{
+	long long	n;
+	int			i;
+
+	i = 0;
+	var->top_b = -1;
+	var->tab_a = (int *)malloc(sizeof(int) * c);
+	var->tab_b = (int *)malloc(sizeof(int) * c);
+	if (!var->tab_a || !var->tab_b)
+		quit(var, 1, v);
+	while (v[i])
+	{
+		n = ft_atoi(v[i], var, v);
+		if (n > 2147483647 || n < -2147483648)
+			quit(var, 1, v);
+		var->tab_a[c - i - 1] = (int)n;
+		i++;
+	}
+	var->top_a = i - 1;
 }

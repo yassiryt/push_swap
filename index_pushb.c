@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   index_pushb.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yatanagh <yatanagh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/28 02:51:50 by yatanagh          #+#    #+#             */
+/*   Updated: 2025/04/08 00:55:29 by yatanagh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -96,7 +107,8 @@ void	push_sorted_to_a(t_stab *var)
 		i = 0;
 		mini_boucle_sorta(var, &i, j);
 		pa(var->tab_a, &var->top_a, var->tab_b, &var->top_b);
-		j = var->tab_b[var->top_b];
+		if (var->top_b > -1)
+			j = var->tab_b[var->top_b];
 		k--;
 	}
 }

@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yatanagh <yatanagh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/10 12:15:40 by yatanagh          #+#    #+#             */
+/*   Updated: 2025/04/08 01:56:44 by yatanagh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct stab
 {
@@ -44,5 +56,7 @@ char		**ft_split(char *s, char c);
 void		qu(int c);
 void		quit(t_stab *va, int c, char **v);
 int			check_space(char **v);
-
+void		nor(t_stab *var);
+void		param_to_var(t_stab *var, char **v, int c);
+void		free_string_array(char **v);
 #endif

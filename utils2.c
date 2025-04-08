@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils2.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yatanagh <yatanagh@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/02 07:26:31 by yatanagh          #+#    #+#             */
+/*   Updated: 2025/04/08 02:25:42 by yatanagh         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
 
@@ -38,8 +49,13 @@ static char	*skip(char *s, char c)
 	return (s);
 }
 
-static char	**ft_free(char **p)
+static void	*ft_free(char **p, int count)
 {
+	while (count > 0)
+	{
+		count--;
+		free(p[count]);
+	}
 	free (p);
 	return (NULL);
 }
@@ -63,7 +79,7 @@ char	**ft_split(char *s, char c)
 		len = small_str(s, c);
 		p[i] = (char *)malloc(sizeof(char) * (len + 1));
 		if (!p[i])
-			return (ft_free(p));
+			return (ft_free(p, i));
 		k = 0;
 		while (k < len)
 			p[i][k++] = *s++;
